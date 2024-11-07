@@ -12,6 +12,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 body {
@@ -624,4 +628,25 @@ footer {
       </svg>
     </a>
   </div>
+
+  <script>
+// Prevent right click
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+    window.location.href = "https://api.whatsapp.com/send?phone=5511978851436";
+});
+
+// Prevent keyboard shortcuts
+document.addEventListener('keydown', function(e) {
+    if (e.ctrlKey || e.keyCode==123) { // Prevent F12 and Ctrl combinations
+       e.preventDefault();
+       window.location.href = "https://api.whatsapp.com/send?phone=5511978851436";
+    }
+});
+
+// Disable text selection 
+document.addEventListener('selectstart', function(e) { 
+    e.preventDefault();
+});
+</script>
 </body></html>
