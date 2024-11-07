@@ -1,0 +1,627 @@
+<html><head><base href="." charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arctic Tech Refrigeração</title>
+<style>
+:root {
+  --primary: #0066cc;
+  --secondary: #e6f2ff;
+  --accent: #00264d;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+}
+
+header {
+  background: var(--primary);
+  color: white;
+  padding: 1rem;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: var(--secondary);
+}
+
+.hero {
+  padding-top: 80px;
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1615873968403-89e068629265?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2832&q=80') center/cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: var(--primary);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: transform 0.3s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+.services {
+  padding: 5rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.services h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--accent);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.service-card {
+  padding: 2rem;
+  background: var(--secondary);
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+.service-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 1rem;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.floating-icon {
+  animation: float 3s ease-in-out infinite;
+}
+
+footer {
+  background: var(--accent);
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
+
+.service-section {
+  padding: 5rem 2rem;
+  background: #f5f5f5;
+}
+
+.service-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.service-row {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  margin-bottom: 4rem;
+}
+
+.service-row:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.service-content {
+  flex: 1;
+}
+
+.service-image {
+  flex: 1;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.service-content h3 {
+  color: var(--accent);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.service-content p {
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.service-features {
+  list-style: none;
+}
+
+.service-features li {
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.service-features li::before {
+  content: "✓";
+  color: var(--primary);
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .service-row {
+    flex-direction: column !important;
+    gap: 2rem;
+  }
+  
+  .service-image {
+    width: 100%;
+  }
+}
+
+.products {
+  padding: 5rem 2rem;
+  background: #fff;
+}
+
+.products-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.products h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--accent);
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.product-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-image {
+  width: 100%;
+  height: 200px;
+  background: var(--secondary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-info {
+  padding: 1.5rem;
+}
+
+.product-info h3 {
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.product-info p {
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.product-price {
+  color: var(--primary);
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.product-btn {
+  width: 100%;
+  text-align: center;
+}
+
+.contact {
+  padding: 5rem 2rem;
+  background: var(--secondary);
+}
+
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+}
+
+.contact-info h2 {
+  color: var(--accent);
+  margin-bottom: 2rem;
+}
+
+.contact-details {
+  list-style: none;
+}
+
+.contact-details li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  color: #666;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: var(--primary);
+  border-radius: 50%;
+  color: white;
+  transition: transform 0.3s;
+}
+
+.social-icons a:hover {
+  transform: translateY(-3px);
+}
+
+.contact-map {
+  width: 100%;
+  height: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Add this CSS inside the existing <style> tag */
+.whatsapp-float {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 1000;
+  animation: pulse 2s infinite;
+}
+
+.whatsapp-float a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background: #25d366;
+  color: white;
+  border-radius: 50%;
+  text-decoration: none;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+  }
+  70% {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+</style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+          <circle cx="20" cy="20" r="18" stroke="white" stroke-width="2"/>
+          <path d="M12 20C12 26 20 26 20 20C20 14 28 14 28 20" stroke="white" stroke-width="2"/>
+        </svg>
+        <span>Arctic Tech</span>
+      </div>
+      <ul>
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#contato">Contato</a></li>
+        <li><a href="#produtos">Produtos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero" id="inicio">
+    <div class="hero-content">
+      <h1>Soluções em Refrigeração</h1>
+      <p>Mantendo seu ambiente na temperatura ideal com eficiência e qualidade</p>
+      <a href="https://api.whatsapp.com/send?phone=5511999999999" class="btn">Entre em Contato</a>
+    </div>
+  </section>
+
+  <section class="services" id="servicos">
+    <h2>Nossos Serviços</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <svg class="service-icon floating-icon" viewBox="0 0 24 24" fill="var(--primary)">
+          <path d="M12,15.5A3.5,3.5 0 0,1 8.5,12A3.5,3.5 0 0,1 12,8.5A3.5,3.5 0 0,1 15.5,12A3.5,3.5 0 0,1 12,15.5M19.43,12.97C19.47,12.65 19.5,12.33 19.5,12C19.5,11.67 19.47,11.34 19.43,11L21.54,9.37C21.73,9.22 21.78,8.95 21.66,8.73L19.66,5.27C19.54,5.05 19.27,4.96 19.05,5.05L16.56,6.05C16.04,5.66 15.5,5.32 14.87,5.07L14.5,2.42C14.46,2.18 14.25,2 14,2H10C9.75,2 9.54,2.18 9.5,2.42L9.13,5.07C8.5,5.32 7.96,5.66 7.44,6.05L4.95,5.05C4.73,4.96 4.46,5.05 4.34,5.27L2.34,8.73C2.21,8.95 2.27,9.22 2.46,9.37L4.57,11C4.53,11.34 4.5,11.67 4.5,12C4.5,12.33 4.53,12.65 4.57,12.97L2.46,14.63C2.27,14.78 2.21,15.05 2.34,15.27L4.34,18.73C4.46,18.95 4.73,19.03 4.95,18.95L7.44,17.94C7.96,18.34 8.5,18.68 9.13,18.93L9.5,21.58C9.54,21.82 9.75,22 10,22H14C14.25,22 14.46,21.82 14.5,21.58L14.87,18.93C15.5,18.67 16.04,18.34 16.56,17.94L19.05,18.95C19.27,19.03 19.54,18.95 19.66,18.73L21.66,15.27C21.78,15.05 21.73,14.78 21.54,14.63L19.43,12.97Z"/>
+        </svg>
+        <h3>Instalação</h3>
+        <p>Instalação profissional de sistemas de ar condicionado residencial e comercial</p>
+      </div>
+
+      <div class="service-card">
+        <svg class="service-icon floating-icon" viewBox="0 0 24 24" fill="var(--primary)">
+          <path d="M21.71,20.29L20.29,21.71C20.11,21.89 19.85,22 19.59,22C19.32,22 19.06,21.89 18.88,21.71L7,9.85C6.74,10 6.38,10.07 6,10.07C4.34,10.07 3,8.73 3,7.07C3,5.41 4.34,4.07 6,4.07C7.66,4.07 9,5.41 9,7.07C9,7.45 8.93,7.81 8.78,8.07L20.29,19.58C20.68,19.97 20.68,20.61 20.29,21V21M6,8.07C6.55,8.07 7,7.62 7,7.07C7,6.5 6.55,6.07 6,6.07C5.45,6.07 5,6.5 5,7.07C5,7.62 5.45,8.07 6,8.07Z"/>
+        </svg>
+        <h3>Manutenção</h3>
+        <p>Serviços de manutenção preventiva e corretiva para todos os tipos de equipamentos</p>
+      </div>
+
+      <div class="service-card">
+        <svg class="service-icon floating-icon" viewBox="0 0 24 24" fill="var(--primary)">
+          <path d="M19.36,2.72L20.78,4.14L15.06,9.85C16.13,11.39 16.28,13.24 15.38,14.44L9.06,8.12C10.26,7.22 12.11,7.37 13.65,8.44L19.36,2.72M5.93,17.57C3.92,15.56 2.69,13.16 2.35,10.92L7.23,8.83L14.67,16.27L12.58,21.15C10.34,20.81 7.94,19.58 5.93,17.57Z"/>
+        </svg>
+        <h3>Limpeza</h3>
+        <p>Limpeza e higienização completa de ar condicionado para maior eficiência</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="service-section">
+    <div class="service-container">
+      <div class="service-row">
+        <div class="service-content">
+          <h3>Instalação Profissional</h3>
+          <p>Nossa equipe altamente qualificada realiza instalações de ar condicionado com precisão e eficiência, garantindo o máximo desempenho do seu equipamento.</p>
+          <ul class="service-features">
+            <li>Análise técnica do local</li>
+            <li>Instalação conforme normas ABNT</li>
+            <li>Testes de funcionamento</li>
+            <li>Garantia de serviço</li>
+          </ul>
+          <a href="https://api.whatsapp.com/send?phone=5511999999999" class="btn">Solicitar Orçamento</a>
+        </div>
+        <div class="service-image">
+          <svg width="100%" height="300" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <rect width="100%" height="100%" fill="#e6f2ff"/>
+            <circle cx="50" cy="50" r="20" fill="var(--primary)"/>
+            <path d="M30 50 C30 70, 70 70, 70 50" stroke="white" stroke-width="2" fill="none"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="service-row">
+        <div class="service-content">
+          <h3>Manutenção Preventiva</h3>
+          <p>Mantenha seu ar condicionado funcionando perfeitamente com nossos serviços de manutenção preventiva regular.</p>
+          <ul class="service-features">
+            <li>Limpeza de filtros</li>
+            <li>Verificação de gás refrigerante</li>
+            <li>Limpeza de componentes</li>
+            <li>Diagnóstico completo</li>
+          </ul>
+          <a href="https://api.whatsapp.com/send?phone=5511999999999" class="btn">Agendar Manutenção</a>
+        </div>
+        <div class="service-image">
+          <svg width="100%" height="300" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <rect width="100%" height="100%" fill="#e6f2ff"/>
+            <circle cx="50" cy="50" r="20" fill="var(--primary)"/>
+            <path d="M35 50 L65 50 M50 35 L50 65" stroke="white" stroke-width="2"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="products" id="produtos">
+    <div class="products-container">
+      <h2>Nossos Produtos</h2>
+      <div class="products-grid">
+        <div class="product-card">
+          <div class="product-image">
+            <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
+              <rect x="20" y="30" width="60" height="40" rx="5" fill="var(--primary)"/>
+              <path d="M30 50h40" stroke="white" stroke-width="2"/>
+              <circle cx="50" cy="50" r="10" fill="white"/>
+            </svg>
+          </div>
+          <div class="product-info">
+            <h3>Ar Condicionado Split 9000 BTUs</h3>
+            <p>Ideal para ambientes até 12m², baixo consumo de energia</p>
+            <div class="product-price">R$ 1.899,00</div>
+            <a href="https://api.whatsapp.com/send?phone=5511999999999" class="btn product-btn">Consultar</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image">
+            <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
+              <rect x="20" y="30" width="60" height="40" rx="5" fill="var(--primary)"/>
+              <path d="M30 50h40" stroke="white" stroke-width="2"/>
+              <circle cx="50" cy="50" r="15" fill="white"/>
+            </svg>
+          </div>
+          <div class="product-info">
+            <h3>Ar Condicionado Split 12000 BTUs</h3>
+            <p>Perfect para ambientes até 20m², tecnologia Inverter</p>
+            <div class="product-price">R$ 2.499,00</div>
+            <a href="https://api.whatsapp.com/send?phone=5511999999999" class="btn product-btn">Consultar</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image">
+            <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
+              <rect x="20" y="30" width="60" height="40" rx="5" fill="var(--primary)"/>
+              <path d="M30 50h40" stroke="white" stroke-width="2"/>
+              <circle cx="50" cy="50" r="20" fill="white"/>
+            </svg>
+          </div>
+          <div class="product-info">
+            <h3>Ar Condicionado Split 18000 BTUs</h3>
+            <p>Ideal para ambientes até 30m², máxima eficiência</p>
+            <div class="product-price">R$ 3.299,00</div>
+            <a href="https://api.whatsapp.com/send?phone=5511999999999" class="btn product-btn">Consultar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contato">
+    <div class="contact-container">
+      <div class="contact-info">
+        <h2>Entre em Contato</h2>
+        <ul class="contact-details">
+          <li>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--primary)">
+              <path d="M12,2C8.13,2 5,5.13 5,9c0,5.25 7,13 7,13s7-7.75 7-13c0-3.87-3.13-7-7-7zM12,11.5c-1.38,0-2.5-1.12-2.5-2.5s1.12-2.5,2.5-2.5,2.5,1.12,2.5,2.5-1.12,2.5-2.5,2.5z"/>
+            </svg>
+            <span>Av. Paulista, 1000 - São Paulo, SP</span>
+          </li>
+          <li>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--primary)">
+              <path d="M20,4H4C2.9,4,2,4.9,2,6v12c0,1.1,0.9,2,2,2h16c1.1,0,2-0.9,2-2V6C22,4.9,21.1,4,20,4z M20,8l-8,5L4,8V6l8,5l8-5V8z"/>
+            </svg>
+            <span>comercial@arctictech.com.br</span>
+          </li>
+          <li>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--primary)">
+              <path d="M20,15.5C18.8,15.5 17.5,15.3 16.4,14.9C16.3,14.9 16.2,14.9 16.1,14.9C15.8,14.9 15.6,15 15.4,15.2L13.2,17.4C10.4,15.9 8,13.6 6.6,10.8L8.8,8.6C9.1,8.3 9.2,7.9 9,7.6C8.7,6.5 8.5,5.2 8.5,4C8.5,3.5 8,3 7.5,3H4C3.5,3 3,3.5 3,4C3,13.4 10.6,21 20,21C20.5,21 21,20.5 21,20V16.5C21,16 20.5,15.5 20,15.5M5,5H6.5C6.6,5.9 6.8,6.8 7,7.6L5.8,8.8C5.4,7.6 5.1,6.3 5,5M19,19C17.7,18.9 16.4,18.6 15.2,18.2L16.4,17C17.2,17.2 18.1,17.4 19,17.4V19Z"/>
+            </svg>
+            <span>(11) 99999-9999</span>
+          </li>
+        </ul>
+        <div class="social-icons">
+          <a href="https://facebook.com/arctictech" target="_blank">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+              <path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 10 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z"/>
+            </svg>
+          </a>
+          <a href="https://instagram.com/arctictech" target="_blank">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+              <path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z"/>
+            </svg>
+          </a>
+          <a href="https://linkedin.com/company/arctictech" target="_blank">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+              <path d="M19,3A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V5A2,2 0 0,1 5,3H19M18.5,18.5V13.2A3.26,3.26 0 0,0 15.24,9.94C14.39,9.94 13.4,10.46 12.92,11.24V10.13H10.13V18.5H12.92V13.57C12.92,12.8 13.54,12.17 14.31,12.17A1.4,1.4 0 0,1 15.71,13.57V18.5H18.5M6.88,8.56A1.68,1.68 0 0,0 8.56,6.88C8.56,5.95 7.81,5.19 6.88,5.19A1.69,1.69 0 0,0 5.19,6.88C5.19,7.81 5.95,8.56 6.88,8.56M8.27,18.5V10.13H5.5V18.5H8.27Z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="contact-map">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.098397278647!2d-46.65390492375607!3d-23.564616061665985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0x63b9f32e364c37b!2sAv.%20Paulista%2C%201000!5e0!3m2!1sen!2sbr!4v1682424534744!5m2!1sen!2sbr"
+          width="100%" 
+          height="100%" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <p>© 2023 Arctic Tech Refrigeração. Todos os direitos reservados.</p>
+      <div class="footer-contact">
+        <p>Contato: (11) 99999-9999 | comercial@arctictech.com.br</p>
+        <p>Av. Paulista, 1000 - São Paulo, SP</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="whatsapp-float">
+    <a href="https://api.whatsapp.com/send?phone=5511978851436" target="_blank">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="white">
+        <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2M17 15.59L15.59 17L12 13.41L8.41 17L7 15.59L10.59 12L7 8.41L8.41 7L12 10.59L15.59 7L17 8.41L13.41 12L17 15.59Z"/>
+        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+      </svg>
+    </a>
+  </div>
+</body></html>
